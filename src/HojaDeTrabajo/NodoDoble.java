@@ -9,6 +9,7 @@ package HojaDeTrabajo;
 /**
  *
  * @author Oscar
+ * @param <T>
  */
 public class NodoDoble<T> extends NodoSimple {
     protected Nodo _anterior;
