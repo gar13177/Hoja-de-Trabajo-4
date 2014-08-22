@@ -1,15 +1,13 @@
+
 package HojaDeTrabajo;
 
 import java.util.Scanner;
 import java.io.*;
 
-/**
- *
- * @author Kevin
- */
 public class  Revision {
 	private Scanner lector_prohibido;
 	private String tempo;
+	private int contador;
 	private String ultimo;
 
 	
@@ -17,17 +15,17 @@ public class  Revision {
 
 
 	
-	public Revision ()throws IOException{
-		
+	public Revision (){
+				ultimo ="";
 	}
 
 	public String  Estudio () throws IOException{
+		
 		lector_prohibido = new Scanner (new BufferedReader(new FileReader("texto.txt")));
 
-
 		do{
-			tempo = lector_prohibido.nextLine();
-			if(!" ".equals(tempo)){
+			String tempo = lector_prohibido.nextLine();
+			if(tempo != " "){
 				ultimo = ultimo + tempo + " ";
 			}
 

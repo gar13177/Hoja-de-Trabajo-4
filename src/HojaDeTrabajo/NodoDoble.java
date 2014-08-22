@@ -1,48 +1,56 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package HojaDeTrabajo;
 
-/**
- *
- * @author Oscar
- * @param <T>
- */
-public class NodoDoble<T> extends NodoSimple {
-    protected Nodo _anterior;
+/*
+Vidal Villegas 131023
+Kevin Garcia 13177
+*/
+
+public class NodoDoble<T> extends BaseNodo{
+
+   
+    private NodoDoble<T> _anterior;
     
+    public NodoDoble()
+   
+    {
+        _valor=null;
+        _siguiente=null;
+        _anterior=null;
+    }
     
-    NodoDoble(){
-        _valor = null;
+    public NodoDoble(T valor)
+    
+    {
+        _valor=valor;
         _siguiente = null;
         _anterior = null;
     }
-    public NodoDoble(T valor){
-        _valor = valor;
-        _siguiente = null;
-        _anterior = null;
+    public NodoDoble (T valor, NodoDoble<T> siguiente, NodoDoble<T> anterior)
+   
+    {
+      _valor = valor;
+      _siguiente = siguiente;
+      _anterior=anterior;
+     
     }
     
-    
-    public NodoDoble(T valor, Nodo siguiente){
-        _valor = valor;
-        _siguiente = siguiente;
+    @Override
+    public int compareTo(Object other) {
+        return (((Comparable)this._valor)).compareTo(other);
+        
     }
-    public NodoDoble(T valor, Nodo siguiente, Nodo anterior){
-        _valor = valor;
-        _siguiente = siguiente;
-        _anterior = anterior;
-    }
+
     
-    public void setAnterior(Nodo anterior) {
-        _siguiente = anterior;
-    }
-    
-    public Nodo getAnterior() {
+    public NodoDoble<T> getAnterior() {
         return _anterior;
+    }
+
+    public void setAnterior(NodoDoble<T> _anterior) {
+        this._anterior = _anterior;
+    }
+    
+    public void setSiguiente(NodoDoble<T> _siguiente) {
+        this._siguiente = _siguiente;
     }
     
 }
